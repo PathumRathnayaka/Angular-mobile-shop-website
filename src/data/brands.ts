@@ -11,7 +11,7 @@ export const brands: Brand[] = [
   {
     id: 'tokyo-cement',
     name: 'Tokyo Cement',
-    logo: 'https://images.pexels.com/photos/3584943/pexels-photo-3584943.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    logo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdz_kB2XZpU0WRbxxkkAUMHoANbwdE1ZqFuw&s',
     description: 'A leading cement manufacturer in Sri Lanka, Tokyo Cement provides a wide range of cement products for various construction needs.',
     productsCount: 8,
   },
