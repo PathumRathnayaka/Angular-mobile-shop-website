@@ -77,3 +77,7 @@ export interface SubCategory {
   name: string;
   imageUrl: string;
 }
+
+export interface LocationData {
+  [district: string]: string[];
+}

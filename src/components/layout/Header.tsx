@@ -4,6 +4,7 @@ import { Menu, ShoppingCart, Search, User, X, ChevronDown } from 'lucide-react';
 import { useCart } from '../../contexts/CartContext';
 import { useAuth } from '../../contexts/AuthContext';
 import { categories } from '../../data/categories';
+import { locations } from '../../data/locations';
 
 const Header: React.FC = () => {
   const { totalItems } = useCart();
@@ -11,6 +12,8 @@ const Header: React.FC = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
   const [categoryDropdownOpen, setCategoryDropdownOpen] = useState(false);
+  const [locationDropdownOpen, setLocationDropdownOpen] = useState(false);
+  const [activeDistrict, setActiveDistrict] = useState<string | null>(null);
   const navigate = useNavigate();
 
   const handleSearch = (e: React.FormEvent) => {
@@ -81,6 +84,55 @@ const Header: React.FC = () => {
                 </div>
               )}
             </div>
+
+            {/* Locations Dropdown */}
+            <div className="relative group">
+              <button 
+                className="flex items-center text-slate-800 hover:text-orange-600 font-medium"
+                onClick={() => setLocationDropdownOpen(!locationDropdownOpen)}
+                onMouseEnter={() => setLocationDropdownOpen(true)}
+              >
+                Locations <ChevronDown size={16} className="ml-1" />
+              </button>
+              {locationDropdownOpen && (
+                <div 
+                  className="absolute top-full left-0 bg-white shadow-lg rounded-md py-2 flex z-20"
+                  onMouseLeave={() => {
+                    setLocationDropdownOpen(false);
+                    setActiveDistrict(null);
+                  }}
+                >
+                  {/* Districts */}
+                  <div className="w-64 border-r border-gray-200">
+                    {Object.keys(locations).map((district) => (
+                      <div
+                        key={district}
+                        className="px-4 py-2 text-slate-700 hover:bg-orange-50 hover:text-orange-600 cursor-pointer"
+                        onMouseEnter={() => setActiveDistrict(district)}
+                      >
+                        {district}
+                        <ChevronDown size={16} className="float-right mt-1" />
+                      </div>
+                    ))}
+                  </div>
+                  
+                  {/* Cities */}
+                  {activeDistrict && (
+                    <div className="w-64 py-2">
+                      {locations[activeDistrict].map((city) => (
+                        <div
+                          key={city}
+                          className="px-4 py-2 text-slate-700 hover:bg-orange-50 hover:text-orange-600 cursor-pointer"
+                        >
+                          {city}
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              )}
+            </div>
+
             <Link to="/brands" className="text-slate-800 hover:text-orange-600 font-medium">
               Brands
             </Link>
