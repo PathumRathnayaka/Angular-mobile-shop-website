@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { PhoneCardComponent, Phone } from '../phone-card/phone-card.component';
+import { PhoneCardComponent, Phone } from '../phone-card/phone-card';
 
 @Component({
   selector: 'app-phone-list',
   imports: [CommonModule, PhoneCardComponent],
-  templateUrl: './phone-list.component.html',
-  styleUrl: './phone-list.component.scss'
+  templateUrl: './phone-list.html',
+  styleUrl: './phone-list.scss'
 })
 export class PhoneListComponent {
   phones: Phone[] = [

@@ -1,8 +1,8 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { NavbarComponent } from './components/navbar/navbar.component';
-import { BannerComponent } from './components/banner/banner.component';
-import { PhoneListComponent } from './components/phone-list/phone-list.component';
+import { NavbarComponent } from './components/navbar/navbar';
+import { BannerComponent } from './components/banner/banner';
+import { PhoneListComponent } from './components/phone-list/phone-list';
 
 @Component({
   selector: 'app-root',

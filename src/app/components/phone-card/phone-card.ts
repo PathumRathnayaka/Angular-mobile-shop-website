@@ -22,8 +22,8 @@ export interface Phone {
 @Component({
   selector: 'app-phone-card',
   imports: [CommonModule],
-  templateUrl: './phone-card.component.html',
-  styleUrl: './phone-card.component.scss'
+  templateUrl: './phone-card.html',
+  styleUrl: './phone-card.scss'
 })
 export class PhoneCardComponent {
   @Input() phone!: Phone;

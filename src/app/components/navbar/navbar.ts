@@ -4,8 +4,8 @@ import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-navbar',
   imports: [CommonModule],
-  templateUrl: './navbar.component.html',
-  styleUrl: './navbar.component.scss'
+  templateUrl: './navbar.html',
+  styleUrl: './navbar.scss'
 })
 export class NavbarComponent {
   isMenuOpen = false;
