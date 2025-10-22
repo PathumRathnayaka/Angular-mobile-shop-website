@@ -1,0 +1,44 @@
+<nav class="bg-gradient-to-r from-blue-600 to-purple-600 shadow-lg sticky top-0 z-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-16">
+      <!-- Logo -->
+      <div class="flex-shrink-0 flex items-center">
+        <span class="text-white text-2xl font-bold">📱 MobileShop</span>
+      </div>
+
+      <!-- Desktop Menu -->
+      <div class="hidden md:flex items-center space-x-8">
+        <a href="#home" class="text-white hover:text-gray-200 transition-colors font-medium">Home</a>
+        <a href="#phones" class="text-white hover:text-gray-200 transition-colors font-medium">Phones</a>
+        <a href="#about" class="text-white hover:text-gray-200 transition-colors font-medium">About</a>
+        <a href="#contact" class="text-white hover:text-gray-200 transition-colors font-medium">Contact</a>
+        <button class="bg-white text-blue-600 px-6 py-2 rounded-full font-semibold hover:bg-gray-100 transition-colors">
+          Shop Now
+        </button>
+      </div>
+
+      <!-- Mobile menu button -->
+      <div class="md:hidden">
+        <button (click)="toggleMenu()" class="text-white hover:text-gray-200 focus:outline-none">
+          <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path *ngIf="!isMenuOpen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            <path *ngIf="isMenuOpen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div *ngIf="isMenuOpen" class="md:hidden bg-blue-700">
+    <div class="px-2 pt-2 pb-3 space-y-1">
+      <a href="#home" class="block px-3 py-2 text-white hover:bg-blue-800 rounded-md">Home</a>
+      <a href="#phones" class="block px-3 py-2 text-white hover:bg-blue-800 rounded-md">Phones</a>
+      <a href="#about" class="block px-3 py-2 text-white hover:bg-blue-800 rounded-md">About</a>
+      <a href="#contact" class="block px-3 py-2 text-white hover:bg-blue-800 rounded-md">Contact</a>
+      <button class="w-full text-left px-3 py-2 bg-white text-blue-600 rounded-md font-semibold">
+        Shop Now
+      </button>
+    </div>
+  </div>
+</nav>
