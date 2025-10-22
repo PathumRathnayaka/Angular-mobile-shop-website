@@ -9,14 +9,15 @@ import { CommonModule } from '@angular/common';
 })
 export class BannerComponent {
   // Image should be placed in public/assets/ folder
-  featuredImage = 'assets/IphoneAir.png';
+  featuredImage = 'assets/IphoneAir.jpg';
   featuredImageAlt = 'iPhone Air';
   featuredImageCaption = 'Featured: Latest iPhone 15 Pro Max';
 
-  // Fallback to a placeholder if image fails to load
+  // Fallback to a data URI placeholder if image fails to load
   onImageError(event: Event) {
     const img = event.target as HTMLImageElement;
-    img.src = 'https://via.placeholder.com/400x400/E5E7EB/6B7280?text=iPhone+Air';
+    // Create a simple SVG placeholder as fallback
+    img.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjQwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjRTVFN0VCIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyNCIgZmlsbD0iIzZCNzI4MCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPmlQaG9uZSBBaXI8L3RleHQ+PC9zdmc+';
     console.error('Failed to load image:', this.featuredImage);
   }
 }

@@ -15,7 +15,7 @@ export class PhoneListComponent {
       name: 'iPhone 15 Pro Max',
       brand: 'Apple',
       price: 1199,
-      image: '📱',
+      image: 'assets/Iphone15pro.jpg',
       specs: {
         display: '6.7" OLED',
         processor: 'A17 Pro',
@@ -32,7 +32,7 @@ export class PhoneListComponent {
       name: 'Galaxy S24 Ultra',
       brand: 'Samsung',
       price: 1299,
-      image: '📱',
+      image: 'assets/GalaxyS24Ultra.png',
       specs: {
         display: '6.8" AMOLED',
         processor: 'Snapdragon 8 Gen 3',
@@ -49,7 +49,7 @@ export class PhoneListComponent {
       name: 'Pixel 8 Pro',
       brand: 'Google',
       price: 999,
-      image: '📱',
+      image: 'assets/Pixel8Pro.jpg',
       specs: {
         display: '6.7" LTPO',
         processor: 'Tensor G3',
@@ -66,7 +66,7 @@ export class PhoneListComponent {
       name: 'OnePlus 12',
       brand: 'OnePlus',
       price: 799,
-      image: '📱',
+      image: 'assets/oneplus-12.png',
       specs: {
         display: '6.7" AMOLED',
         processor: 'Snapdragon 8 Gen 3',
@@ -83,7 +83,7 @@ export class PhoneListComponent {
       name: 'Xiaomi 14 Pro',
       brand: 'Xiaomi',
       price: 899,
-      image: '📱',
+      image: 'assets/Xiaomi 14 Pro.png',
       specs: {
         display: '6.73" AMOLED',
         processor: 'Snapdragon 8 Gen 3',
@@ -100,7 +100,7 @@ export class PhoneListComponent {
       name: 'Nothing Phone 2',
       brand: 'Nothing',
       price: 699,
-      image: '📱',
+      image: 'assets/Nothing Phone 2.jpg',
       specs: {
         display: '6.7" LTPO',
         processor: 'Snapdragon 8+ Gen 1',
