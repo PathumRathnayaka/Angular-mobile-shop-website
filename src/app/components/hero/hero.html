@@ -1,0 +1,38 @@
+<section class="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
+  <!-- Background gradient with low opacity -->
+  <div class="absolute inset-0 bg-gradient-to-br from-blue-600 to-purple-600 opacity-10"></div>
+  
+  <!-- Hero background image with opacity -->
+  <div 
+    class="absolute inset-0 opacity-80 bg-cover bg-center"
+    [style.background-image]="'url(' + heroImage + ')'"
+    (error)="onImageError($event)">
+  </div>
+  
+  <!-- Gradient overlay from transparent to background color -->
+  <div class="absolute inset-0 bg-gradient-to-b from-transparent via-white/80 to-white"></div>
+  
+  <!-- Main content -->
+  <div class="container mx-auto px-4 relative z-10">
+    <div class="max-w-4xl mx-auto text-center space-y-8">
+      <!-- Main heading -->
+      <h1 class="text-5xl md:text-7xl font-bold leading-tight">
+        Discover the Latest
+        <span class="block bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+          Flagship Smartphones
+        </span>
+      </h1>
+      
+      <!-- Description text -->
+      <p class="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto">
+        Experience cutting-edge technology with the newest collection of premium smartphones. 
+        Unbeatable prices, exclusive deals, and fast delivery.
+      </p>
+      
+      <!-- Call to action buttons -->
+      <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+        
+      </div>
+    </div>
+  </div>
+</section>
