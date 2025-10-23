@@ -16,14 +16,7 @@ export class PhoneListComponent {
       brand: 'Apple',
       price: 1199,
       image: 'assets/Iphone15pro.jpg',
-      specs: {
-        display: '6.7" OLED',
-        processor: 'A17 Pro',
-        ram: '8GB',
-        storage: '256GB',
-        camera: '48MP',
-        battery: '4422mAh'
-      },
+      description: '6.7" OLED display, A17 Pro chip, 48MP camera with advanced AI features',
       colors: ['#000000', '#2c3e50', '#3498db', '#e74c3c'],
       rating: 4.9
     },
@@ -33,14 +26,7 @@ export class PhoneListComponent {
       brand: 'Samsung',
       price: 1299,
       image: 'assets/GalaxyS24Ultra.png',
-      specs: {
-        display: '6.8" AMOLED',
-        processor: 'Snapdragon 8 Gen 3',
-        ram: '12GB',
-        storage: '512GB',
-        camera: '200MP',
-        battery: '5000mAh'
-      },
+      description: '6.8" AMOLED display, Snapdragon 8 Gen 3, 200MP camera system',
       colors: ['#2c3e50', '#8e44ad', '#27ae60', '#c0392b'],
       rating: 4.8
     },
@@ -50,14 +36,7 @@ export class PhoneListComponent {
       brand: 'Google',
       price: 999,
       image: 'assets/Pixel8Pro.jpg',
-      specs: {
-        display: '6.7" LTPO',
-        processor: 'Tensor G3',
-        ram: '12GB',
-        storage: '256GB',
-        camera: '50MP',
-        battery: '5050mAh'
-      },
+      description: 'Google Tensor G3, 6.7" LTPO display, 50MP triple camera, best-in-class AI',
       colors: ['#34495e', '#95a5a6', '#3498db'],
       rating: 4.7
     },
@@ -67,14 +46,7 @@ export class PhoneListComponent {
       brand: 'OnePlus',
       price: 799,
       image: 'assets/oneplus-12.png',
-      specs: {
-        display: '6.7" AMOLED',
-        processor: 'Snapdragon 8 Gen 3',
-        ram: '16GB',
-        storage: '512GB',
-        camera: '50MP',
-        battery: '5400mAh'
-      },
+      description: 'Snapdragon 8 Gen 3, 6.7" AMOLED 120Hz, 5400mAh battery, 100W charging',
       colors: ['#000000', '#16a085', '#95a5a6'],
       rating: 4.6
     },
@@ -84,14 +56,7 @@ export class PhoneListComponent {
       brand: 'Xiaomi',
       price: 899,
       image: 'assets/Xiaomi 14 Pro.png',
-      specs: {
-        display: '6.73" AMOLED',
-        processor: 'Snapdragon 8 Gen 3',
-        ram: '12GB',
-        storage: '256GB',
-        camera: '50MP',
-        battery: '4880mAh'
-      },
+      description: 'Leica camera system, 6.73" AMOLED display, 90W HyperCharge, premium build',
       colors: ['#2c3e50', '#ffffff', '#9b59b6'],
       rating: 4.5
     },
@@ -101,14 +66,7 @@ export class PhoneListComponent {
       brand: 'Nothing',
       price: 699,
       image: 'assets/Nothing Phone 2.jpg',
-      specs: {
-        display: '6.7" LTPO',
-        processor: 'Snapdragon 8+ Gen 1',
-        ram: '12GB',
-        storage: '256GB',
-        camera: '50MP',
-        battery: '4700mAh'
-      },
+      description: 'Unique Glyph interface, 6.7" LTPO display, Snapdragon 8+ Gen 1',
       colors: ['#ecf0f1', '#000000'],
       rating: 4.4
     }

@@ -1,82 +1,43 @@
-<div class="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-shadow duration-300 overflow-hidden group">
+<div class="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 border border-gray-100">
   <!-- Image Container -->
-  <div class="relative bg-gradient-to-br from-gray-50 to-gray-100 p-8 h-72 flex items-center justify-center overflow-hidden">
-    <img
-      [src]="phone.image"
+  <div class="relative aspect-square bg-gray-50 overflow-hidden">
+    <img 
+      [src]="phone.image" 
       [alt]="phone.name"
-      class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-300"
+      class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
       (error)="onImageError($event)"
     />
     <div class="absolute top-4 right-4 bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
       New
     </div>
-    <div class="absolute top-4 left-4 flex items-center gap-1 bg-white px-2 py-1 rounded-full">
-      <span class="text-yellow-500">⭐</span>
-      <span class="text-sm font-semibold">{{ phone.rating }}</span>
-    </div>
   </div>
-
+  
   <!-- Content -->
   <div class="p-6 space-y-4">
     <!-- Brand and Name -->
-    <div>
-      <p class="text-sm text-gray-500 font-medium">{{ phone.brand }}</p>
-      <h3 class="text-xl font-bold text-gray-900 mt-1">{{ phone.name }}</h3>
+    <div class="space-y-2">
+      <h3 class="text-xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
+        {{ phone.name }}
+      </h3>
+      <p class="text-sm text-gray-600 line-clamp-2">
+        {{ phone.description }}
+      </p>
+    </div>
+    
+    <!-- Price and Cart Button -->
+    <div class="flex items-center justify-between pt-2">
+      <span class="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+        ${{ phone.price }}
+      </span>
+      <button class="bg-gradient-to-r from-blue-600 to-purple-600 hover:opacity-90 transition-opacity text-white px-4 py-2 rounded-lg font-semibold text-sm flex items-center gap-2">
+        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+        </svg>
+        Add to Cart
+      </button>
     </div>
 
-    <!-- Price -->
-    <div class="flex items-baseline gap-2">
-      <span class="text-3xl font-bold text-blue-600">${{ phone.price }}</span>
-      <span class="text-sm text-gray-500 line-through">${{ phone.price + 100 }}</span>
-    </div>
-
-    <!-- Specs -->
-    <div class="grid grid-cols-2 gap-3 py-4 border-t border-b border-gray-100">
-      <div class="flex items-center gap-2">
-        <span class="text-blue-600">🖥️</span>
-        <div>
-          <p class="text-xs text-gray-500">Display</p>
-          <p class="text-sm font-semibold">{{ phone.specs.display }}</p>
-        </div>
-      </div>
-      <div class="flex items-center gap-2">
-        <span class="text-purple-600">⚡</span>
-        <div>
-          <p class="text-xs text-gray-500">Processor</p>
-          <p class="text-sm font-semibold">{{ phone.specs.processor }}</p>
-        </div>
-      </div>
-      <div class="flex items-center gap-2">
-        <span class="text-green-600">💾</span>
-        <div>
-          <p class="text-xs text-gray-500">RAM</p>
-          <p class="text-sm font-semibold">{{ phone.specs.ram }}</p>
-        </div>
-      </div>
-      <div class="flex items-center gap-2">
-        <span class="text-orange-600">💿</span>
-        <div>
-          <p class="text-xs text-gray-500">Storage</p>
-          <p class="text-sm font-semibold">{{ phone.specs.storage }}</p>
-        </div>
-      </div>
-      <div class="flex items-center gap-2">
-        <span class="text-pink-600">📷</span>
-        <div>
-          <p class="text-xs text-gray-500">Camera</p>
-          <p class="text-sm font-semibold">{{ phone.specs.camera }}</p>
-        </div>
-      </div>
-      <div class="flex items-center gap-2">
-        <span class="text-red-600">🔋</span>
-        <div>
-          <p class="text-xs text-gray-500">Battery</p>
-          <p class="text-sm font-semibold">{{ phone.specs.battery }}</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Colors -->
+    <!-- Available Colors -->
     <div>
       <p class="text-sm text-gray-500 mb-2">Available Colors</p>
       <div class="flex gap-2">
@@ -88,19 +49,6 @@
           [style.background-color]="color">
         </button>
       </div>
-    </div>
-
-    <!-- Actions -->
-    <div class="flex gap-3 pt-4">
-      <button class="flex-1 bg-gradient-to-r from-blue-600 to-purple-600 text-white py-3 rounded-lg font-semibold hover:shadow-lg transition-shadow">
-        Buy Now
-      </button>
-      <button class="px-4 border-2 border-gray-300 rounded-lg hover:border-blue-600 hover:text-blue-600 transition-colors">
-        🛒
-      </button>
-      <button class="px-4 border-2 border-gray-300 rounded-lg hover:border-red-600 hover:text-red-600 transition-colors">
-        ❤️
-      </button>
     </div>
   </div>
 </div>

@@ -8,7 +8,11 @@ import { CommonModule } from '@angular/common';
   styleUrl: './hero.scss'
 })
 export class HeroComponent {
-  heroImage = 'assets/hero-phones.jpg';
+  // Desktop background image
+  heroImageDesktop = 'assets/hero-phones.jpg';
+  
+  // Mobile background image
+  heroImageMobile = 'assets/hero-phones-mobile.jpg';
 
   onImageError(event: Event) {
     const img = event.target as HTMLImageElement;

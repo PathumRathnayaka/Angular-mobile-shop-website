@@ -7,14 +7,7 @@ export interface Phone {
   brand: string;
   price: number;
   image: string;
-  specs: {
-    display: string;
-    processor: string;
-    ram: string;
-    storage: string;
-    camera: string;
-    battery: string;
-  };
+  description: string;
   colors: string[];
   rating: number;
 }
@@ -34,10 +27,8 @@ export class PhoneCardComponent {
     this.selectedColor = index;
   }
 
-  // Fallback to a data URI placeholder if image fails to load
   onImageError(event: Event) {
     const img = event.target as HTMLImageElement;
-    // Create a simple SVG placeholder as fallback
     img.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjQwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjRTVFN0VCIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyNCIgZmlsbD0iIzZCNzI4MCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPk1vYmlsZTwvdGV4dD48L3N2Zz4=';
     console.error('Failed to load phone image:', this.phone.image);
   }

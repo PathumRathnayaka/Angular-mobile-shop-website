@@ -2,10 +2,17 @@
   <!-- Background gradient with low opacity -->
   <div class="absolute inset-0 bg-gradient-to-br from-blue-600 to-purple-600 opacity-10"></div>
   
-  <!-- Hero background image with opacity -->
+  <!-- Mobile Hero background image (visible only on mobile - below md breakpoint) -->
   <div 
-    class="absolute inset-0 opacity-80 bg-cover bg-center"
-    [style.background-image]="'url(' + heroImage + ')'"
+    class="absolute inset-0 opacity-80 bg-cover bg-center md:hidden"
+    [style.background-image]="'url(' + heroImageMobile + ')'"
+    (error)="onImageError($event)">
+  </div>
+  
+  <!-- Desktop Hero background image (visible only on desktop - md breakpoint and above) -->
+  <div 
+    class="absolute inset-0 opacity-80 bg-cover bg-center hidden md:block"
+    [style.background-image]="'url(' + heroImageDesktop + ')'"
     (error)="onImageError($event)">
   </div>
   
