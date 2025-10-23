@@ -10,7 +10,7 @@
           </span>
         </h1>
         <p class="text-xl text-gray-600">
-          Discover the newest smartphones with cutting-edge technology. 
+          Discover the newest smartphones with cutting-edge technology.
           Get exclusive deals and premium quality phones.
         </p>
         <div class="flex flex-col sm:flex-row gap-4">
@@ -21,7 +21,7 @@
             Learn More
           </button>
         </div>
-        
+
         <!-- Features -->
         <div class="grid grid-cols-3 gap-4 pt-8">
           <div class="text-center">
@@ -39,20 +39,27 @@
         </div>
       </div>
 
-      <!-- Right Image -->
+      <!-- Right Video Container -->
       <div class="relative">
         <div class="absolute inset-0 bg-gradient-to-r from-blue-400 to-purple-400 rounded-3xl transform rotate-6"></div>
         <div class="relative bg-white p-8 rounded-3xl shadow-2xl">
           <div class="aspect-square bg-white from-blue-100 to-purple-100 rounded-2xl flex items-center justify-center overflow-hidden">
-            <img
-              [src]="featuredImage"
-              [alt]="featuredImageAlt"
-              class="w-full h-full object-contain p-4"
-              (error)="onImageError($event)"
-            />
+            <video
+              #bannerVideo
+              [src]="videoSource"
+              class="w-full h-full object-cover"
+              autoplay
+              loop
+              muted
+              playsinline
+              preload="auto"
+              (error)="onVideoError($event)"
+              (loadeddata)="onVideoLoaded($event)">
+              Your browser does not support the video tag.
+            </video>
           </div>
           <div class="mt-4 text-center">
-            <p class="text-gray-600 text-sm">{{ featuredImageCaption }}</p>
+            <p class="text-gray-600 text-sm">Featured: Experience the Future of Mobile</p>
           </div>
         </div>
       </div>

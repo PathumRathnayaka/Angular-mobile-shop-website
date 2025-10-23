@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -7,17 +7,34 @@ import { CommonModule } from '@angular/common';
   templateUrl: './banner.html',
   styleUrl: './banner.scss'
 })
-export class BannerComponent {
-  // Image should be placed in public/assets/ folder
-  featuredImage = 'assets/IphoneAir.jpg';
-  featuredImageAlt = 'iPhone Air';
-  featuredImageCaption = 'Featured: Latest iPhone 15 Pro Max';
+export class BannerComponent implements AfterViewInit {
+  @ViewChild('bannerVideo') bannerVideo!: ElementRef<HTMLVideoElement>;
 
-  // Fallback to a data URI placeholder if image fails to load
-  onImageError(event: Event) {
-    const img = event.target as HTMLImageElement;
-    // Create a simple SVG placeholder as fallback
-    img.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjQwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjRTVFN0VCIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyNCIgZmlsbD0iIzZCNzI4MCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPmlQaG9uZSBBaXI8L3RleHQ+PC9zdmc+';
-    console.error('Failed to load image:', this.featuredImage);
+  // Video file should be placed in public/assets/ folder
+  videoSource = 'assets/video.mp4';
+  isPlaying = true;
+
+  ngAfterViewInit() {
+    // Ensure video plays on load
+    const video = this.bannerVideo.nativeElement;
+    video.muted = true; // Muted autoplay is more widely supported
+
+    // Try to play the video
+    video.play().then(() => {
+      this.isPlaying = true;
+      console.log('Banner video started playing');
+    }).catch(error => {
+      console.log('Autoplay was prevented:', error);
+      this.isPlaying = false;
+    });
+  }
+
+  onVideoError(event: Event) {
+    console.error('Video failed to load:', this.videoSource);
+    this.isPlaying = false;
+  }
+
+  onVideoLoaded(event: Event) {
+    console.log('Banner video loaded successfully');
   }
 }
