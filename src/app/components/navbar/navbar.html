@@ -1,18 +1,16 @@
-<nav class="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-lg border-b border-border">
+<nav class="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-lg">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
     <div class="flex items-center justify-between">
       <!-- Logo -->
-      <div class="flex items-center gap-2">
-        <div class="bg-gradient-to-r from-blue-600 to-purple-600 p-2 rounded-lg">
-          <svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
-          </svg>
-        </div>
-        <span class="text-xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-          MobileShop
-        </span>
+      <div class="flex items-center">
+        <img
+          src="assets/mobee.png"
+          alt="MobileShop Logo"
+          class="h-10 w-auto object-contain"
+          style="background: transparent;"
+        />
       </div>
-      
+
       <!-- Desktop Menu -->
       <div class="hidden md:flex items-center gap-8">
         <a href="#home" class="text-gray-900 hover:text-blue-600 transition-colors font-medium">
@@ -28,9 +26,12 @@
           Contact
         </a>
       </div>
-      
+
       <!-- Action Button -->
-      <button class="hidden md:block bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-2 rounded-lg font-semibold hover:opacity-90 transition-opacity">
+      <button
+        class="hidden md:block rounded-md py-2 px-6 text-center text-sm font-semibold text-slate-600 transition-all shadow-sm hover:shadow-lg hover:text-white hover:bg-gradient-to-r hover:from-blue-600 hover:to-purple-600 focus:text-white focus:bg-gradient-to-r focus:from-blue-600 focus:to-purple-600 active:text-white active:bg-gradient-to-r active:from-blue-600 active:to-purple-600 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+        type="button"
+      >
         Shop Now
       </button>
 

@@ -10,7 +10,7 @@ import { CommonModule } from '@angular/common';
 export class HeroComponent {
   // Desktop background image
   heroImageDesktop = 'assets/hero-phones.jpg';
-  
+
   // Mobile background image
   heroImageMobile = 'assets/hero-phones-mobile.jpg';
 
