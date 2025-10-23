@@ -1,0 +1,46 @@
+// Video section styles
+video {
+  display: block;
+  object-fit: cover;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    transform: scale(1.02);
+  }
+}
+
+// Ensure proper aspect ratio and responsive behavior
+.video-container {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%; // 16:9 aspect ratio
+  
+  video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+// Play/pause button styling
+.play-pause-btn {
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  
+  &:hover {
+    transform: scale(1.1);
+    backdrop-filter: blur(15px);
+  }
+}
+
+// Responsive adjustments
+@media (max-width: 768px) {
+  video {
+    &:hover {
+      transform: none; // Disable hover effects on mobile
+    }
+  }
+}
