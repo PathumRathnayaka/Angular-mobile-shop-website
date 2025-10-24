@@ -40,7 +40,7 @@
     <!-- Price and Cart Button -->
     <div class="flex items-center justify-between pt-2">
       <span class="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-        Rs {{ phone.price }}
+        Rs {{ formatPrice(phone.price) }}
       </span>
       <button class="bg-gradient-to-r from-blue-600 to-purple-600 hover:opacity-90 transition-opacity text-white px-4 py-2 rounded-lg font-semibold text-sm flex items-center gap-2">
         <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">

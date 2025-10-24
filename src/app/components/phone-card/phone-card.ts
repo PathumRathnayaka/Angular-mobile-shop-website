@@ -20,11 +20,19 @@ export interface Phone {
 })
 export class PhoneCardComponent {
   @Input() phone!: Phone;
-  
+
   selectedColor = 0;
 
   selectColor(index: number) {
     this.selectedColor = index;
+  }
+
+  formatPrice(price: number): string {
+    // Format number with commas and 2 decimal places
+    return price.toLocaleString('en-US', {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2
+    });
   }
 
   onImageError(event: Event) {
