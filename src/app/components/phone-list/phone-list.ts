@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PhoneCardComponent, Phone } from '../phone-card/phone-card';
+import { ScrollAnimationDirective } from '../../directives/scroll-animation.directive';
 
 @Component({
   selector: 'app-phone-list',
-  imports: [CommonModule, PhoneCardComponent],
+  imports: [CommonModule, PhoneCardComponent, ScrollAnimationDirective],
   templateUrl: './phone-list.html',
   styleUrl: './phone-list.scss'
 })

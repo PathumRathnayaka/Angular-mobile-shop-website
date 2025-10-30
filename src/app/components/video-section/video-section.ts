@@ -9,16 +9,16 @@ import { CommonModule } from '@angular/common';
 })
 export class VideoSectionComponent implements AfterViewInit {
   @ViewChild('videoPlayer') videoPlayer!: ElementRef<HTMLVideoElement>;
-  
+
   // Video file is located in public/assets/ folder
   videoSource = 'assets/your-video.mp4.mp4';
   isPlaying = true;
-  
+
   ngAfterViewInit() {
     // Ensure video plays on load (some browsers may block autoplay)
     const video = this.videoPlayer.nativeElement;
     video.muted = true; // Muted autoplay is more widely supported
-    
+
     // Try to play the video
     video.play().then(() => {
       this.isPlaying = true;
@@ -27,7 +27,7 @@ export class VideoSectionComponent implements AfterViewInit {
       console.log('Autoplay was prevented:', error);
       this.isPlaying = false;
     });
-    
+
     // Listen for play/pause events to update state
     video.addEventListener('play', () => this.isPlaying = true);
     video.addEventListener('pause', () => this.isPlaying = false);

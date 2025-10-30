@@ -1,2 +1,160 @@
 /* You can add global styles to this file, and also import other style files */
 @import "tailwindcss";
+
+/* ===== SCROLL ANIMATIONS ===== */
+
+/* Initial hidden state */
+.scroll-animation-hidden {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* Visible state */
+.scroll-animation-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Animation Types */
+
+/* Fade in from bottom */
+.fade-in-up {
+  &.scroll-animation-hidden {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+
+  &.scroll-animation-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Fade in from top */
+.fade-in-down {
+  &.scroll-animation-hidden {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+
+  &.scroll-animation-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Fade in from left */
+.fade-in-left {
+  &.scroll-animation-hidden {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+
+  &.scroll-animation-visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Fade in from right */
+.fade-in-right {
+  &.scroll-animation-hidden {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+
+  &.scroll-animation-visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Scale in (zoom in) */
+.scale-in {
+  &.scroll-animation-hidden {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+
+  &.scroll-animation-visible {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Rotate in */
+.rotate-in {
+  &.scroll-animation-hidden {
+    opacity: 0;
+    transform: rotate(-10deg) scale(0.9);
+  }
+
+  &.scroll-animation-visible {
+    opacity: 1;
+    transform: rotate(0) scale(1);
+  }
+}
+
+/* Fade in only (no movement) */
+.fade-in {
+  &.scroll-animation-hidden {
+    opacity: 0;
+  }
+
+  &.scroll-animation-visible {
+    opacity: 1;
+  }
+}
+
+/* Flip in */
+.flip-in {
+  perspective: 1000px;
+
+  &.scroll-animation-hidden {
+    opacity: 0;
+    transform: rotateY(90deg);
+  }
+
+  &.scroll-animation-visible {
+    opacity: 1;
+    transform: rotateY(0);
+  }
+}
+
+/* Slide and fade combination */
+.slide-fade {
+  &.scroll-animation-hidden {
+    opacity: 0;
+    transform: translateY(30px) scale(0.95);
+  }
+
+  &.scroll-animation-visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Smooth scrolling for anchor links */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom easing for smoother animations */
+.scroll-animation-hidden,
+.scroll-animation-visible {
+  transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  .scroll-animation-hidden {
+    transition: none;
+    opacity: 1;
+    transform: none;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+}

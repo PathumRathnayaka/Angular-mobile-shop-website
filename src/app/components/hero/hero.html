@@ -1,17 +1,23 @@
-<section class="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
+<section
+  #heroSection
+  class="relative min-h-screen flex items-center justify-center overflow-hidden pt-16"
+  [class.animate-in]="isVisible">
+
   <!-- Background gradient with low opacity -->
   <div class="absolute inset-0 bg-gradient-to-br from-blue-600 to-purple-600 opacity-10"></div>
 
   <!-- Mobile Hero background image (visible only on mobile - below md breakpoint) -->
   <div
-    class="absolute inset-0 opacity-80 bg-cover bg-center md:hidden"
+    class="absolute inset-0 opacity-80 bg-cover bg-center md:hidden transition-transform duration-1000"
+    [class.scale-110]="isVisible"
     [style.background-image]="'url(' + heroImageMobile + ')'"
     (error)="onImageError($event)">
   </div>
 
   <!-- Desktop Hero background image (visible only on desktop - md breakpoint and above) -->
   <div
-    class="absolute inset-0 opacity-80 bg-cover bg-center hidden md:block"
+    class="absolute inset-0 opacity-80 bg-cover bg-center hidden md:block transition-transform duration-1000"
+    [class.scale-110]="isVisible"
     [style.background-image]="'url(' + heroImageDesktop + ')'"
     (error)="onImageError($event)">
   </div>
@@ -22,23 +28,46 @@
   <!-- Main content -->
   <div class="container mx-auto px-4 relative z-10">
     <div class="max-w-4xl mx-auto text-center space-y-8">
-      <!-- Main heading -->
+
+      <!-- Main heading with staggered animation -->
       <h1 class="text-5xl md:text-7xl font-bold leading-tight">
-        Discover the Latest
-        <span class="block bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+        <span
+          class="block transition-all duration-700 delay-100"
+          [class.opacity-0]="!isVisible"
+          [class.translate-y-8]="!isVisible"
+          [class.opacity-100]="isVisible"
+          [class.translate-y-0]="isVisible">
+          Discover the Latest
+        </span>
+        <span
+          class="block bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent transition-all duration-700 delay-300"
+          [class.opacity-0]="!isVisible"
+          [class.translate-y-8]="!isVisible"
+          [class.opacity-100]="isVisible"
+          [class.translate-y-0]="isVisible">
           Flagship Smartphones
         </span>
       </h1>
 
-      <!-- Description text -->
-      <p class="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto">
+      <!-- Description text with fade-in animation -->
+      <p
+        class="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto transition-all duration-700 delay-500"
+        [class.opacity-0]="!isVisible"
+        [class.translate-y-8]="!isVisible"
+        [class.opacity-100]="isVisible"
+        [class.translate-y-0]="isVisible">
         Experience cutting-edge technology with the newest collection of premium smartphones.
         Unbeatable prices, exclusive deals, and fast delivery.
       </p>
 
-      <!-- Call to action buttons -->
-      <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-
+      <!-- Call to action buttons with fade-in and slide-up animation -->
+      <div
+        class="flex flex-col sm:flex-row gap-4 justify-center items-center transition-all duration-700 delay-700"
+        [class.opacity-0]="!isVisible"
+        [class.translate-y-8]="!isVisible"
+        [class.opacity-100]="isVisible"
+        [class.translate-y-0]="isVisible">
+        <!-- Buttons can be added here if needed -->
       </div>
     </div>
   </div>

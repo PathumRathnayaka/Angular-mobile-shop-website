@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -7,12 +7,24 @@ import { CommonModule } from '@angular/common';
   templateUrl: './hero.html',
   styleUrl: './hero.scss'
 })
-export class HeroComponent {
+export class HeroComponent implements OnInit {
+  @ViewChild('heroSection') heroSection!: ElementRef<HTMLElement>;
+
   // Desktop background image
   heroImageDesktop = 'assets/hero-phones.jpg';
 
   // Mobile background image
   heroImageMobile = 'assets/hero-phones-mobile.jpg';
+
+  // Animation states
+  isVisible = false;
+
+  ngOnInit() {
+    // Trigger animation after a short delay for initial page load
+    setTimeout(() => {
+      this.isVisible = true;
+    }, 100);
+  }
 
   onImageError(event: Event) {
     const img = event.target as HTMLImageElement;

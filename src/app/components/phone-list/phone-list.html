@@ -1,38 +1,58 @@
 <section id="phones" class="py-16 bg-gray-50">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <!-- Header -->
+
+    <!-- Header with animation -->
     <div class="text-center mb-12">
-      <h2 class="text-4xl font-bold text-gray-900 mb-4">
+      <h2
+        appScrollAnimation
+        animationClass="fade-in-down"
+        class="text-4xl font-bold text-gray-900 mb-4">
         Latest Mobile Phones
       </h2>
-      <p class="text-xl text-gray-600">
+      <p
+        appScrollAnimation
+        animationClass="fade-in-down"
+        [delay]="100"
+        class="text-xl text-gray-600">
         Choose from our wide collection of premium smartphones
       </p>
     </div>
 
-    <!-- Category Filter -->
-    <div class="flex flex-wrap justify-center gap-3 mb-12">
+    <!-- Category Filter with animation -->
+    <div
+      appScrollAnimation
+      animationClass="fade-in-up"
+      [delay]="200"
+      class="flex flex-wrap justify-center gap-3 mb-12">
       <button
-        *ngFor="let category of categories"
+        *ngFor="let category of categories; let i = index"
         (click)="selectCategory(category)"
         [class]="'px-6 py-2 rounded-full font-semibold transition-all ' +
-                 (selectedCategory === category 
-                   ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg' 
-                   : 'bg-white text-gray-700 hover:bg-gray-100')">
+                 (selectedCategory === category
+                   ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg'
+                   : 'bg-white text-gray-700 hover:bg-gray-100')"
+        [style.animation-delay]="i * 50 + 'ms'">
         {{ category === 'all' ? 'All Phones' : category }}
       </button>
     </div>
 
-    <!-- Phone Grid -->
+    <!-- Phone Grid with staggered animations -->
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      <app-phone-card 
-        *ngFor="let phone of filteredPhones" 
-        [phone]="phone">
-      </app-phone-card>
+      <div
+        *ngFor="let phone of filteredPhones; let i = index"
+        appScrollAnimation
+        animationClass="scale-in"
+        [delay]="i * 100"
+        [threshold]="0.1">
+        <app-phone-card [phone]="phone"></app-phone-card>
+      </div>
     </div>
 
-    <!-- Load More Button -->
-    <div class="text-center mt-12">
+    <!-- Load More Button with animation -->
+    <div
+      appScrollAnimation
+      animationClass="fade-in-up"
+      class="text-center mt-12">
       <button class="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-lg font-semibold hover:shadow-lg transition-shadow">
         Load More Phones
       </button>
