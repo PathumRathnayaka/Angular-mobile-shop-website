@@ -12,8 +12,9 @@ export class BannerComponent implements AfterViewInit, OnDestroy {
   @ViewChild('bannerVideo') bannerVideo!: ElementRef<HTMLVideoElement>;
   @ViewChild('bannerSection') bannerSection!: ElementRef<HTMLElement>;
 
-  // Video file should be placed in public/assets/ folder
+  // Video files should be placed in public/assets/ folder
   videoSource = 'assets/video.mp4';
+  videoPoster = 'assets/your-video.jpg';
   isPlaying = false;
   private observer?: IntersectionObserver;
 
