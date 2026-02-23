@@ -51,8 +51,8 @@
         <div class="relative bg-white p-8 rounded-3xl shadow-2xl">
           <div
             class="aspect-square bg-white from-blue-100 to-purple-100 rounded-2xl flex items-center justify-center overflow-hidden">
-            <video #bannerVideo [src]="videoSource" [poster]="videoPoster" class="w-full h-full object-cover" loop muted
-              playsinline preload="auto" (error)="onVideoError($event)" (loadeddata)="onVideoLoaded($event)">
+            <video #bannerVideo [src]="videoSource" class="w-full h-full object-cover" loop muted playsinline
+              preload="auto" (error)="onVideoError($event)" (loadeddata)="onVideoLoaded($event)">
               Your browser does not support the video tag.
             </video>
           </div>

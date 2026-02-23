@@ -12,6 +12,7 @@ export class VideoSectionComponent implements AfterViewInit {
 
   // Video file is located in public/assets/ folder
   videoSource = 'assets/your-video.mp4.mp4';
+  videoPoster = 'assets/your-video.jpg';
   isPlaying = true;
 
   ngAfterViewInit() {

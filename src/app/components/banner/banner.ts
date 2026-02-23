@@ -14,7 +14,6 @@ export class BannerComponent implements AfterViewInit, OnDestroy {
 
   // Video files should be placed in public/assets/ folder
   videoSource = 'assets/video.mp4';
-  videoPoster = 'assets/your-video.jpg';
   isPlaying = false;
   private observer?: IntersectionObserver;
 
