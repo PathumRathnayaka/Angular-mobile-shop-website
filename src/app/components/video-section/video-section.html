@@ -1,16 +1,9 @@
-<section class="relative w-full bg-black py-8 md:py-16">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <!-- Video Container -->
-    <div class="relative w-full overflow-hidden rounded-lg shadow-2xl">
-      <video #videoPlayer [src]="videoSource" [poster]="videoPoster"
-        class="w-full h-[300px] md:h-[500px] lg:h-[600px] object-cover" autoplay loop muted playsinline preload="auto"
-        (error)="onVideoError($event)" (loadeddata)="onVideoLoaded($event)">
-        Your browser does not support the video tag.
-      </video>
+<section class="relative w-full bg-black overflow-hidden">
+  <video #videoPlayer [src]="videoSource" [poster]="videoPoster" class="w-full h-screen object-cover" autoplay loop
+    muted playsinline preload="auto" (error)="onVideoError($event)" (loadeddata)="onVideoLoaded($event)">
+    Your browser does not support the video tag.
+  </video>
 
-      <!-- Optional overlay gradient -->
-      <div class="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent pointer-events-none">
-      </div>
-    </div>
-  </div>
+  <!-- Optional overlay gradient -->
+  <div class="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent pointer-events-none"></div>
 </section>
